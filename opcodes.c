@@ -51,6 +51,9 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	current	= *stack;
 
+	if (current == NULL)
+		exit(EXIT_SUCCESS);
+
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);
