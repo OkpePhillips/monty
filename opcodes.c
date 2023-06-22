@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int value;
 	stack_t *new_node;
 
-	token = strtok(NULL, " \t");
+	token = strtok(NULL, " \t\n");
 	if (token == NULL || !isdigit(*token))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
