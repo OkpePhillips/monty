@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_number)
 	token = strtok(NULL, " \t");
 	if (token == NULL || !isdigit(*token))
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(token);
@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (new_node == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = value;
@@ -121,4 +121,3 @@ void swap(stack_t **stack, unsigned int line_number)
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp;
 }
-

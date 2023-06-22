@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Usage: %s input_file\n", argv[0]);
+		fprintf(stderr, /"Usage: %s input_file\n", argv[0]);
 		return (1);
 	}
 	input_file = argv[1];
 	file = fopen(input_file, "r");
 	if (file == NULL)
 	{
-		printf("Can't open file %s\n", input_file);
+		fprintf(stderr, "Can't open file %s\n", input_file);
 		return (EXIT_FAILURE);
 	}
 	line_number = 1;

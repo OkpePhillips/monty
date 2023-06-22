@@ -61,6 +61,6 @@ void handle_opcode(char *token, stack_t **stack, unsigned int line_number)
 			return;
 		}
 	}
-	printf("L%u: unknown instruction %s\n", line_number, token);
+	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
