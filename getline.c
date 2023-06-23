@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 	file = fopen(input_file, "r");
 	if (file == NULL)
 	{
-		fprintf(stderr, "Can't open file %s\n", input_file);
+		fprintf(stderr, "Error: Can't open file %s\n", input_file);
 		exit(EXIT_FAILURE);
 	}
 	line_number = 1;
