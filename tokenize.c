@@ -15,6 +15,8 @@ void tokenize(char *line, unsigned int line_number, stack_t **stack)
 
 	i = 0;
 
+	if (token == NULL || strcmp(token, "#") == 0)
+		return;
 	while (token != NULL)
 	{
 		if (token[strlen(token) - 1] == '$')

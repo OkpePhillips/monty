@@ -49,6 +49,14 @@ void handle_opcode(char *token, stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
+		{"div", divider},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	int i;
@@ -84,4 +92,22 @@ void free_stack(stack_t **stack)
 		current = next;
 	}
 	*stack = NULL;
+}
+
+/**
+ * sub - function to implement the sub instruction
+ * @stack: the structure
+ * @line_number: the line number in the monty bytecodes
+ *
+ * Return: nothing
+*/
+void sub(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n -= (*stack)->n;
+	pop(stack, line_number);
 }
