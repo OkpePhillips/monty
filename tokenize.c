@@ -11,8 +11,8 @@
 void tokenize(char *line, unsigned int line_number, stack_t **stack)
 {
 	int i;
-
 	char *token = strtok(line, " \t\n");
+
 	i = 0;
 
 	while (token != NULL)
@@ -28,7 +28,7 @@ void tokenize(char *line, unsigned int line_number, stack_t **stack)
 		}
 		else if (strcmp(token, "push") == 0)
 			handle_opcode(token, stack, line_number);
-		
+
 		token = strtok(NULL, " \t\n");
 	}
 }
