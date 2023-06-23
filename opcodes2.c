@@ -64,3 +64,24 @@ void handle_opcode(char *token, stack_t **stack, unsigned int line_number)
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
 	exit(EXIT_FAILURE);
 }
+
+/**
+*free_stack - frees all allocated memory
+*@stack: the data structure
+*
+* Return: Nothing
+*/
+void free_stack(stack_t **stack)
+{
+	stack_t *current;
+	stack_t *next;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
+}

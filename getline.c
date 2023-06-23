@@ -77,5 +77,6 @@ int main(int argc, char *argv[])
 		line_number++;
 	}
 	fclose(file);
+	free_stack(&stack);
 	return (EXIT_SUCCESS);
 }
