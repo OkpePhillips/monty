@@ -15,7 +15,7 @@ void tokenize(char *line, unsigned int line_number, stack_t **stack)
 
 	i = 0;
 
-	if (token == NULL || strcmp(token, "#") == 0)
+	if (token == NULL || strncmp(token, "#", 1) == 0)
 		return;
 	while (token != NULL)
 	{
