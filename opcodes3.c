@@ -111,9 +111,9 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (*stack != NULL)
 	{
+		*stack = top->next;
 		(*stack)->prev = NULL;
 	}
-	free(top);
 }
 
 /**
